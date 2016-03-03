@@ -41,8 +41,9 @@ namespace Clustering {
         double &operator[](int index);
 
         // Friends
-        friend Point &operator+=(Point &, const Point &);
-        friend Point &operator-=(Point &, const Point &);
+        friend Point &operator+=(Point &rhs, const Point &lhs);
+
+        friend Point &operator-=(Point &rhs, const Point &lhs);
         friend const Point operator+(const Point &, const Point &);
         friend const Point operator-(const Point &, const Point &);
 

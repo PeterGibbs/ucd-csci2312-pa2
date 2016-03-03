@@ -7,6 +7,7 @@
 #include <cassert>
 #include <iomanip>
 #include <fstream>
+#include <limits>
 
 #include "ClusteringTests.h"
 #include "Point.h"
@@ -756,6 +757,7 @@ void test_point_IO(ErrorContext &ec, unsigned int numRuns) {
             Point p2(50);
             std::stringstream iostr;
             iostr << std::setprecision(20) << p1; // Avoid truncation
+
             iostr >> p2;
 
             pass = true;
@@ -1077,8 +1079,9 @@ void test_cluster_subscript(ErrorContext &ec, unsigned int numRuns) {
             p[5] = 3.14;
 
             c.add(p);
-            Point p1 = c[0];
 
+            Point p1 = c[0];
+            std::cout << std::endl;
             pass = p1[5] == 3.14;
 
             ec.result(pass);
@@ -1171,6 +1174,7 @@ void test_cluster_order(ErrorContext &ec, unsigned int numRuns) {
             c.add(p4);
             c.add(p3);
             c.add(p5);
+
 
             pass = (c[0] == p5)
                    && (c[1] == p4)

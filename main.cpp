@@ -6,6 +6,7 @@
 
 #include "ErrorContext.h"
 #include "ClusteringTests.h"
+#include "Point.h"
 
 using std::cout;
 using std::endl;
@@ -30,6 +31,7 @@ int main() {
     ErrorContext ec(cout);
 
     // point tests
+
     test_point_smoketest(ec);
     test_point_id(ec, NumIters);
     test_point_getsetelem(ec, NumIters);
@@ -43,6 +45,7 @@ int main() {
     test_point_IO(ec, NumIters);
 
     // cluster tests
+
     test_cluster_smoketest(ec);
     test_cluster_subscript(ec, NumIters);
     test_cluster_equality(ec, NumIters);
