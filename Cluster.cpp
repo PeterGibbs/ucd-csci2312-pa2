@@ -1,6 +1,7 @@
 //
 // Created by Peter on 2/19/2016.
 //
+//Cluster implementation
 #include <sstream>
 #include <iostream>
 #include <fstream>
